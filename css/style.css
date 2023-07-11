@@ -112,3 +112,197 @@
     border: 2px solid aqua;
     padding: .2em .5em;
 }
+
+.hovering_boxes_container{
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.hovering_box{
+    padding: 12em 7em;
+    background-color: white;
+    background-image: url(../img/gaming-studio.jpg);
+    background-size: cover;
+    opacity: 0;
+}
+
+.hovering_box:nth-child(1){
+    opacity: 1;
+    cursor: pointer;
+}
+
+.hovering_box:nth-child(2){
+    background-position: 25%;
+    transition: opacity 300ms ease-in-out;
+}
+
+.hovering_box:nth-child(3){
+    background-position: 50%;
+    transition: opacity 500ms ease-in-out;
+}
+
+.hovering_box:nth-child(4){
+    background-position: 75%;
+    transition: opacity 700ms ease-in-out;
+}
+
+.hovering_box:nth-child(5){
+    background-position: 100%;
+    transition: opacity 900ms ease-in-out;
+}
+
+
+/* .hovering_box:nth-child(1)~ .hovering_box{
+    opacity: 0;
+} */
+
+
+.hovering_box:nth-child(1):hover~.hovering_box{
+    opacity: 1;
+}
+
+.overlay_section{
+    padding: 4em;
+    color: rgb(13, 223, 255);
+    text-align: center;
+}
+
+.overlay_title{
+    font-size: 2rem;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px;
+}
+
+.overlay_img_container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.overlay_container{
+    position: relative;
+    width: 30%;
+    height: 15rem;
+    /* padding: 7em 0; */
+    border-radius: 15px;
+    background-image: url(../img/Minecraft-dark-screen.jpg);
+    background-size: cover;
+
+    transition: outline 1000ms ease-in-out,outline-offset 800ms ease-in-out;
+}
+
+.overlay_container:nth-child(2){
+    background-image: url(../img/league-of-legendsimage.jpg);
+}
+.overlay_container:nth-child(3){
+    background-image: url(../img/Red_Dead_Redemption_II.jpg);
+}
+
+.overlay_container::before{
+    content: " ";
+    background-color: rgb(255, 255, 255, .3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    transform: scaleY(0);
+    transition: transform 500ms ease-in-out;
+    
+}
+
+
+
+.overlay_container > * {
+    transition:  opacity 500ms 300ms ease-in-out;
+    opacity: 0;
+    z-index: 5;
+}
+
+.genre_title{
+    font-size: xx-large;
+    margin-bottom: 2rem;
+    
+}
+
+.btn_learn_more{
+    background-color: rgb(128, 128, 128,.9);
+    font-size: larger;
+    font-weight: bolder;
+}   
+
+
+.overlay_container:hover {
+    outline: 4px solid white;
+    outline-offset: 7px;
+}
+
+.overlay_container:hover > *{
+    opacity: 1;
+}
+
+.overlay_container:hover::before{
+    transform: scaleY(1);
+}
+
+
+
+.footer_title {
+    padding: 1em;
+    background-color: rgba(128, 128, 128, .7);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.hamburger_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 3rem;
+    height: 3rem;
+
+    cursor: pointer;
+}
+
+.bar {
+    height: .3rem;
+    border: 1px solid white;
+    border-radius: 10px;
+
+    transition: opacity 500ms ease-in-out,
+        transform 500ms ease-in-out;
+}
+
+.bar-1 {
+    transform: translateY(-4px);
+}
+
+.bar-3 {
+    transform: translateY(4px);
+}
+
+.bar-1,
+.bar-3 {
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .4);
+}
+
+.check:checked~.hamburger_container>.bar-2 {
+    opacity: 0;
+}
+
+.check:checked~.hamburger_container>.bar-1 {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.check:checked~.hamburger_container>.bar-3 {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+.hamburger_container,
+.check {
+    display: none;
+}
